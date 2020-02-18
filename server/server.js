@@ -7,6 +7,13 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 3002;
 
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology',true);
+
+
 // Define middleware here
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));

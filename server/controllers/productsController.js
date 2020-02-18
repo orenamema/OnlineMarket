@@ -36,6 +36,13 @@ module.exports = {
     //   })
     //   .catch(err => console.log(err));
   },
+  // find cart from db
+  findCart: function(req, res) {
+    db.Product
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     axios
       .get(

@@ -19,4 +19,9 @@ router
   .route("/category")
   .get(productsController.findByClass)
 
+// Matches cart "/api/products/cart"
+  router
+  .route("/cart")
+  .get(productsController.findCart)
+
 module.exports = router;
